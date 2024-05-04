@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-A script (Fabric) to distribute an archive to my web servers
+Fabric script that distributes an archive to your web servers
 """
 
 from datetime import datetime
@@ -13,7 +13,7 @@ env.user = "ubuntu"
 
 def do_pack():
     """
-       A Function to  return archive path if archive has been generated correct.
+        Function to return archive path if archive has generated correct.
     """
 
     local("mkdir -p versions")
