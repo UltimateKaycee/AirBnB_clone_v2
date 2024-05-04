@@ -7,7 +7,7 @@ env.hosts = ['34.201.165.113', '54.90.52.235']
 env.user = "ubuntu"
 
 
-def do_clean(number=0):
+def do_clean(numb=0):
     """ A Function that will clean """
 
     numb = int(numb)
