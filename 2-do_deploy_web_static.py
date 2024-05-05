@@ -10,15 +10,15 @@ from os.path import exists
 env.hosts = ['34.201.165.113', '54.90.52.235']
 
 
-def do_deploy(archive_path):
+def do_deploy(path):
     """Function to distribute an archive to web servers"""
-    if exists(archive_path) is False:
+    if exists(path) is False:
         return False
     try:
-        file_n = archive_path.split("/")[-1]
+        file_n = path.split("/")[-1]
         no_ext = file_n.split(".")[0]
         path = "/data/web_static/releases/"
-        put(archive_path, '/tmp/')
+        put(path, '/tmp/')
         run('mkdir -p {}{}/'.format(path, no_ext))
         run('tar -xzf /tmp/{} -C {}{}/'.format(file_n, path, no_ext))
         run('rm /tmp/{}'.format(file_n))
